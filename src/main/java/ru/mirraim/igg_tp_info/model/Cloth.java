@@ -1,6 +1,8 @@
 package ru.mirraim.igg_tp_info.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.mirraim.igg_tp_info.model.enumeration.SourceEnum;
 
 @Getter
 @Setter
@@ -31,5 +34,10 @@ public class Cloth {
     private ClothingType type;
     @ManyToOne
     private Color color;
-    private String source;
+    @Enumerated(EnumType.STRING)
+    private SourceEnum source;
+
+    public Cloth(String name) {
+        this.name = name;
+    }
 }

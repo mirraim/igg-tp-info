@@ -1,4 +1,4 @@
-package ru.mirraim.igg_tp_info.service;
+package ru.mirraim.igg_tp_info.service.search;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +13,11 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class StoryService {
+public class StoryService implements SearchService<Story> {
     private final StoryRepository repository;
     private Map<String, Story> stories;
 
+    @Override
     @Transactional
     public Story get(String name) {
         if (stories == null) {
@@ -31,6 +32,7 @@ public class StoryService {
         return stories.get(name);
     }
 
+    @Override
     @Transactional
     public List<Story> findAll() {
         return repository.findAll();

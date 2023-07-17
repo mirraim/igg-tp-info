@@ -1,4 +1,4 @@
-package ru.mirraim.igg_tp_info.service;
+package ru.mirraim.igg_tp_info.service.search;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +13,11 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class ColorService {
+public class ColorService implements SearchService<Color> {
     private final ColorRepository repository;
     private Map<String, Color> colors;
 
+    @Override
     @Transactional
     public Color get(String name) {
         if (colors == null) {
@@ -31,6 +32,7 @@ public class ColorService {
         return colors.get(name);
     }
 
+    @Override
     @Transactional
     public List<Color> findAll() {
         return repository.findAll();

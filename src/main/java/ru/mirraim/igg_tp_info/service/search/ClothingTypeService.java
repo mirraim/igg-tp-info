@@ -1,4 +1,4 @@
-package ru.mirraim.igg_tp_info.service;
+package ru.mirraim.igg_tp_info.service.search;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +13,11 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class ClothingTypeService {
+public class ClothingTypeService implements SearchService<ClothingType> {
     private final ClothingTypeRepository repository;
     private Map<String, ClothingType> types;
 
+    @Override
     @Transactional
     public ClothingType get(String name) {
         if (types == null) {
@@ -31,6 +32,7 @@ public class ClothingTypeService {
         return types.get(name);
     }
 
+    @Override
     @Transactional
     public List<ClothingType> findAll() {
         return repository.findAll();

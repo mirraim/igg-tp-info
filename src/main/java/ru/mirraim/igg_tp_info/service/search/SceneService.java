@@ -1,4 +1,4 @@
-package ru.mirraim.igg_tp_info.service;
+package ru.mirraim.igg_tp_info.service.search;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +13,11 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class SceneService {
+public class SceneService implements SearchService<Scene> {
     private final SceneRepository repository;
     private Map<String, Scene> scenes;
 
+    @Override
     @Transactional
     public Scene get(String name) {
         if (scenes == null) {
@@ -31,6 +32,7 @@ public class SceneService {
         return scenes.get(name);
     }
 
+    @Override
     @Transactional
     public List<Scene> findAll() {
         return repository.findAll();
