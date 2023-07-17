@@ -1,4 +1,4 @@
-package ru.mirraim.iggtpinfo.model;
+package ru.mirraim.igg_tp_info.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

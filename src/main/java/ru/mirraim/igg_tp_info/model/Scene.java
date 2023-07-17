@@ -1,4 +1,4 @@
-package ru.mirraim.iggtpinfo.model;
+package ru.mirraim.igg_tp_info.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,13 +7,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "tuple")
-public class Tuple {
+@Table(name = "scene")
+public class Scene {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne
-    private Tag first;
-    @ManyToOne
-    private Tag second;
+    private String name;
 }

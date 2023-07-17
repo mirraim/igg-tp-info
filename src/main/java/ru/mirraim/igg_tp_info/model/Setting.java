@@ -1,4 +1,4 @@
-package ru.mirraim.iggtpinfo.model;
+package ru.mirraim.igg_tp_info.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,4 +13,10 @@ public class Setting {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ManyToOne
+    private Story story;
+    @ManyToOne
+    private Scene scene;
+    @ManyToOne
+    private Tuple tuple;
 }
