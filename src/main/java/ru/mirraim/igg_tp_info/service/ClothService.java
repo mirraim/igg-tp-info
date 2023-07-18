@@ -22,8 +22,8 @@ public class ClothService {
         Cloth cloth = clothRepository.getByName(clothReq.name()).orElse(new Cloth(clothReq.name()));
         cloth.setSetting(settingService.getSetting(clothReq.setting()));
         cloth.setStars(clothReq.stars());
-        cloth.setColor(colorService.get(clothReq.color()));
-        cloth.setType(typeService.get(clothReq.type()));
+        cloth.setColor(colorService.get(clothReq.color().getDescription()));
+        cloth.setType(typeService.get(clothReq.type().getDescription()));
         cloth.setSource(clothReq.source());
         return clothRepository.save(cloth);
     }
@@ -35,8 +35,8 @@ public class ClothService {
         }
         cloth.setSetting(setting);
         cloth.setStars(clothReq.stars());
-        cloth.setColor(colorService.get(clothReq.color()));
-        cloth.setType(typeService.get(clothReq.type()));
+        cloth.setColor(colorService.get(clothReq.color().getDescription()));
+        cloth.setType(typeService.get(clothReq.type().getDescription()));
         cloth.setSource(clothReq.source());
         return clothRepository.save(cloth);
     }

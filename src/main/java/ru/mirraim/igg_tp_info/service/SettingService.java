@@ -15,10 +15,20 @@ import ru.mirraim.igg_tp_info.service.search.SearchService;
 @RequiredArgsConstructor
 public class SettingService {
     private final SettingRepository settingRepository;
+    private final ClothService clothService;
     private final SearchService<Story> storyService;
     private final SearchService<Scene> sceneService;
     private final TupleService tupleService;
 
+
+    public Setting createFullSet(SettingRequest settingReq) {
+        Setting setting = createOrUpdate(settingReq);
+        if (settingReq.items() == null) {
+            throw new BadRequestException("Добавьте предметы в сет");
+        }
+        settingReq.items().getItems().values().forEach(item -> clothService.createOrUpdate(setting, item));
+        return setting;
+    }
     @Transactional
     public Setting createOrUpdate(SettingRequest settingReq) {
         Setting setting = settingRepository.getByName(settingReq.name()).orElse(new Setting(settingReq.name()));

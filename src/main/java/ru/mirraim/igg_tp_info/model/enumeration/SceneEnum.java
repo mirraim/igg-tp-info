@@ -19,7 +19,7 @@ public enum SceneEnum {
     STARRY_LEGEND("Звездная легенда", "сатурн и звезды"),
     PHANTOM_LIGHT("Призрачный свет", "спираль");
 
-    private final String description;
+    private final String scene;
     private final String icon;
 
 }
