@@ -8,7 +8,7 @@ import ru.mirraim.igg_tp_info.model.Tuple;
 import ru.mirraim.igg_tp_info.repository.TupleRepository;
 import ru.mirraim.igg_tp_info.service.search.TagService;
 
-import java.util.Optional;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -23,8 +23,11 @@ public class TupleService {
         Set<Tag> tags = tagNames.stream()
                 .map(tagService::get)
                 .collect(Collectors.toSet());
-        Optional<Tuple> tuple = tupleRepository.findByTags(tags);
-        return tuple.orElseGet(() -> tupleRepository.save(new Tuple(tags)));
+        List<Tuple> tuples = tupleRepository.findByTags(tags);
+        return tuples.stream()
+                .filter(tuple -> tuple.getTags().equals(tags))
+                .findFirst()
+                .orElseGet(() -> tupleRepository.save(new Tuple(tags)));
     }
 
 }

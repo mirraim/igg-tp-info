@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="mirraim">
+        <comment>Inserting Authors</comment>
+        <insert tableName="clothing_type">
+            <column name="name" value="Шляпа"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Заколка"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Прическа"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Аксессуар на лицо"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Платье"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Блуза"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Брюки"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Юбка"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Туфли"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Чулки"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Браслет на ногу"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Ожерелье"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Серьги"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Перчатки"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Браслет на руку"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Кольцо"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Сумка"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Мэйк"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Маникюр"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Крылья"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Фон"/>
+        </insert>
+        <insert tableName="clothing_type">
+            <column name="name" value="Интерьер"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

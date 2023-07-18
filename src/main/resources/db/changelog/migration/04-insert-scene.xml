@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="04" author="mirraim">
+        <comment>Inserting Authors</comment>
+        <insert tableName="scene">
+            <column name="name" value="Придворные танцы"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Послеобеденный чай"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Позолоченный век"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Поразительный эпизод"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Зарубежные пейзажи"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Волшебное приключение"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Чудесное путешествие"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Восточная фантазия"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Стилизовано все"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Романтическая поэма"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Звездная легенда"/>
+        </insert>
+        <insert tableName="scene">
+            <column name="name" value="Призрачный свет"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

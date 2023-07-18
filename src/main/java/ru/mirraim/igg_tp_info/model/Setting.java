@@ -14,7 +14,8 @@ import java.util.Objects;
 @NoArgsConstructor
 public class Setting {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "setting_gen",sequenceName = "setting_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "setting_gen")
     private Long id;
     private String name;
     @ManyToOne

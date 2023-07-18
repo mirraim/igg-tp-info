@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="05" author="mirraim">
+        <comment>Inserting Authors</comment>
+        <insert tableName="tag">
+            <column name="name" value="Простой"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Формальный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Прохладный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Роскошный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Очаровательный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Теплый"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Элегантный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Благородный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Свирепый"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Дерзкий"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Изящный"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Сладкий"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Здравомыслящий"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="name" value="Повседневный"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

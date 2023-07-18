@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="01" author="mirraim">
+        <createTable tableName="tag">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="story">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="scene">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="color">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="clothing_type">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="tuple">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="tuple_tag">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="tuple_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="tuple_tag" baseColumnNames="tag_id"
+                                 constraintName="tag_fk"
+                                 referencedTableName="tag" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="tuple_tag" baseColumnNames="tuple_id"
+                                 constraintName="tuple_fk"
+                                 referencedTableName="tuple" referencedColumnNames="id"/>
+        <createTable tableName="setting">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="tuple_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="scene_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="story_id" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="setting" baseColumnNames="tuple_id"
+                                 constraintName="setting_tuple_fk"
+                                 referencedTableName="tuple" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="setting" baseColumnNames="scene_id"
+                                 constraintName="scene_fk"
+                                 referencedTableName="scene" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="setting" baseColumnNames="story_id"
+                                 constraintName="story_fk"
+                                 referencedTableName="story" referencedColumnNames="id"/>
+        <createTable tableName="cloth">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="stars" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="setting_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="source" type="varchar(225)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="cloth" baseColumnNames="setting_id"
+                                 constraintName="setting_fk"
+                                 referencedTableName="setting" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="cloth" baseColumnNames="type_id"
+                                 constraintName="type_fk"
+                                 referencedTableName="clothing_type" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="cloth" baseColumnNames="color_id"
+                                 constraintName="color_fk"
+                                 referencedTableName="color" referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

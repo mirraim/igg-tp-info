@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <include file="db/changelog/migration/01-create-tables.xml" />
+    <include file="db/changelog/migration/02-insert-clothing-type.xml" />
+    <include file="db/changelog/migration/03-insert-color.xml" />
+    <include file="db/changelog/migration/04-insert-scene.xml" />
+    <include file="db/changelog/migration/05-insert-tag.xml" />
+    <include file="db/changelog/migration/06-insert-story.xml" />
+
+</databaseChangeLog>

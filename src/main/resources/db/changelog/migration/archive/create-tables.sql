@@ -1,30 +1,30 @@
 create table if not exists tag
 (
     id   serial primary key,
-    name varchar(50)
+    name varchar(50) unique
 );
 create table if not exists story
 (
     id   serial primary key,
-    name text
+    name text unique
 );
 
 create table if not exists scene
 (
     id   serial primary key,
-    name text
+    name text unique
 );
 
 create table if not exists color
 (
     id   serial primary key,
-    name text
+    name text unique
 );
 
 create table if not exists clothing_type
 (
     id   serial primary key,
-    name varchar(50)
+    name varchar(50) unique
 );
 
 create table if not exists tuple

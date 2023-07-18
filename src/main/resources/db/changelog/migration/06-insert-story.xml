@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="06" author="mirraim">
+        <comment>Inserting Authors</comment>
+        <insert tableName="story">
+            <column name="name" value="Королева Мария"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Волшебная лампа"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Мемуары Готема"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Лебединое озеро"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Елена Спартанская"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Роми и Джулий"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Тени Лондона"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Маленькие Женщины"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Призрак оперы"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Приключения Тайсе"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Сага о Виере"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Охотник из династии Тан"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Взгляд Си Ву"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Принцесса Сисси"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Белая змея"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Вы видели Клаудию?"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Священный зверь"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Клеопатра"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Шепот дождя"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Древние сны"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Поместье с призраками"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Королевство чудищ"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Весенняя соната"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Дом ужасов"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Путешествие гурмана"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Антиквариат мисс Китти"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Модные времена"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Компас Хелы"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Золотой век"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Идеальный шторм"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Код: падение кита"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Сестры моря"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Движущиеся горы"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Аптекарь"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Лунная легенда"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Моравский экспресс"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Исчезновение Доминика"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Тайны Хартвуда"/>
+        </insert>
+        <insert tableName="story">
+            <column name="name" value="Тайны Зентико"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
