@@ -9,6 +9,9 @@
     <changeSet id="06" author="mirraim">
         <comment>Inserting Authors</comment>
         <insert tableName="story">
+            <column name="name" value="Специальный"/>
+        </insert>
+        <insert tableName="story">
             <column name="name" value="Королева Мария"/>
         </insert>
         <insert tableName="story">

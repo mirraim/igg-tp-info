@@ -1,4 +1,4 @@
-package ru.mirraim.igg_tp_info.service;
+package ru.mirraim.igg_tp_info.service.look;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +9,7 @@ import ru.mirraim.igg_tp_info.model.Scene;
 import ru.mirraim.igg_tp_info.model.Setting;
 import ru.mirraim.igg_tp_info.model.Story;
 import ru.mirraim.igg_tp_info.repository.SettingRepository;
+import ru.mirraim.igg_tp_info.service.TupleService;
 import ru.mirraim.igg_tp_info.service.search.SearchService;
 
 @Service
@@ -20,15 +21,6 @@ public class SettingService {
     private final SearchService<Scene> sceneService;
     private final TupleService tupleService;
 
-
-    public Setting createFullSet(SettingRequest settingReq) {
-        Setting setting = createOrUpdate(settingReq);
-        if (settingReq.items() == null) {
-            throw new BadRequestException("Добавьте предметы в сет");
-        }
-        settingReq.items().getItems().values().forEach(item -> clothService.createOrUpdate(setting, item));
-        return setting;
-    }
     @Transactional
     public Setting createOrUpdate(SettingRequest settingReq) {
         Setting setting = settingRepository.getByName(settingReq.name()).orElse(new Setting(settingReq.name()));

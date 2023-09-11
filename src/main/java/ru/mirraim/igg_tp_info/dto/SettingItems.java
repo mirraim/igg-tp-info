@@ -111,7 +111,7 @@ public class SettingItems {
     }
 
     private ClothRequest buildItem(Item item, ClothingTypeEnum type) {
-        return new ClothRequest(item.name(), item.stars(), null, type, item.source(), item.color());
+        return new ClothRequest(item.name(), item.stars(), type, item.source(), item.color());
     }
 
 

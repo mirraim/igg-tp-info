@@ -12,6 +12,6 @@ import java.util.Set;
 @Repository
 public interface TupleRepository extends JpaRepository<Tuple, Integer> {
 
-    @Query("select t from Tuple t join fetch t.tags tag where tag.name in :tags")
+    @Query("select t from Tuple t join fetch t.tags tag where tag in :tags")
     List<Tuple> findByTags(Set<Tag> tags);
 }

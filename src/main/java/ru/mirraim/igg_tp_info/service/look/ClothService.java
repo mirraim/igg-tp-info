@@ -1,4 +1,4 @@
-package ru.mirraim.igg_tp_info.service;
+package ru.mirraim.igg_tp_info.service.look;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,11 @@ import ru.mirraim.igg_tp_info.service.search.SearchService;
 @RequiredArgsConstructor
 public class ClothService {
     private final ClothRepository clothRepository;
-    private final SettingService settingService;
     private final SearchService<ClothingType> typeService;
     private final SearchService<Color> colorService;
 
     public Cloth createOrUpdate(ClothRequest clothReq) {
         Cloth cloth = clothRepository.getByName(clothReq.name()).orElse(new Cloth(clothReq.name()));
-        cloth.setSetting(settingService.getSetting(clothReq.setting()));
         cloth.setStars(clothReq.stars());
         cloth.setColor(colorService.get(clothReq.color().getDescription()));
         cloth.setType(typeService.get(clothReq.type().getDescription()));
@@ -30,9 +28,6 @@ public class ClothService {
 
     public Cloth createOrUpdate(Setting setting, ClothRequest clothReq) {
         Cloth cloth = clothRepository.getByName(clothReq.name()).orElse(new Cloth(clothReq.name()));
-        if (setting.getId() == null) {
-            setting = settingService.getSetting(setting.getName());
-        }
         cloth.setSetting(setting);
         cloth.setStars(clothReq.stars());
         cloth.setColor(colorService.get(clothReq.color().getDescription()));

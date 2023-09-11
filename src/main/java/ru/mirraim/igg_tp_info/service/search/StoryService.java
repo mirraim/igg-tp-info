@@ -20,11 +20,16 @@ public class StoryService implements SearchService<Story> {
     @Override
     @Transactional
     public Story get(String name) {
+
         if (stories == null) {
             stories = findAll().stream().collect(Collectors.toMap(
                     Story::getName,
                     story -> story
             ));
+        }
+
+        if (name == null) {
+            return null;
         }
         if (!stories.containsKey(name)) {
             throw new BadRequestException("История не существует");

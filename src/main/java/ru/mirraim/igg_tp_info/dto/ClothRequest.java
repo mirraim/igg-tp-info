@@ -7,7 +7,6 @@ import ru.mirraim.igg_tp_info.model.enumeration.SourceEnum;
 public record ClothRequest(
         String name,
         Integer stars,
-        String setting,
         ClothingTypeEnum type,
         SourceEnum source,
         ColorEnum color) {
