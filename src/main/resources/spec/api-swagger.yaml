@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  title: igg-tp-analytics
+  version: 1.0.0
+servers:
+  - description: api
+    url: http://localhost:8080
+
+paths:
+  /stories/companions:
+    get:
+      tags:
+        - stories
+      summary: Список спутников по историям
+      operationId: getStoryCompanions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrappedStoryResponseDto'
+
+
+components:
+  schemas:
+    WrappedStoryResponseDto:
+      description: Обертка для списка историй
+      type: object
+      properties:
+        storyCollection:
+          description: Список историй
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryResponseDto'
+
+    StoryResponseDto:
+      description: Описание истории с перечистением спутников
+      type: object
+      properties:
+        id:
+          description: Идентификатор истории
+          type: string
+          example: 29e5a7df-1ccf-40e3-9387-0e70766d21da
+        name:
+          description:  Наименование истории
+          type: string
+          example: Королева Мария
+        companionCollection:
+          description: список спутников из истории
+          type: array
+          items:
+            $ref: '#/components/schemas/CompanionResponseDto'
+
+    CompanionResponseDto:
+      description:  спутник
+      type: object
+      properties:
+        id:
+          description: Идентификатор спутника
+          type: string
+          example: 29e5a7df-1ccf-40e3-9387-0e70766d21da
+        name:
+          description: Имя спутника
+          type: string
+          example: Королева Мария
