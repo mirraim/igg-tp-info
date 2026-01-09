@@ -1,0 +1,32 @@
+package ru.mirraim.igg.tp.analytics.domain.enums;
+
+public enum GiftCode {
+    CARPET,
+    MIRROR,
+    BROOM,
+    HOLY_CROSS,
+    JADE_JAR,
+    WHISKEY,
+    SUMMER,
+    GLAZE_BOWL,
+    POTION,
+    MONEY_PLANT,
+    GLOBE,
+    CENSER,
+    SNUFFBOX,
+    BEADS,
+    SOLOMON,
+    LACQUER_BOX,
+    SADDLE,
+    CHOCOLATE,
+    SNOWFLAKE,
+    ASSORTED_FRUITS,
+    SERUM,
+    LIFE_FOUNTAIN,
+    GOLD_FOIL,
+    DREAMCATCHER,
+    CRYPTEX,
+    CANDY,
+    BOOK,
+    INCENSE;
+}

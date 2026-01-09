@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/1-init/init.sql
+  - include:
+      file: db/changelog/1-init/insert_material_gift.sql
+  - include:
+      file: db/changelog/1-init/insert_story.sql
+  - include:
+      file: db/changelog/1-init/insert_companion.sql
+  - include:
+      file: db/changelog/2-add_tags/add_tag_table.sql
